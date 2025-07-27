@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seer - Your Custom Printing Partner</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for hamburger icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom font import for Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Light gray background */
+        }
+        /* Smooth scroll for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom styling for the hamburger menu transition */
+        .nav-links {
+            transition: max-height 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .nav-links.open {
+            max-height: 300px; /* Adjust based on content height */
+        }
+        /* Style for active navigation link */
+        .nav-link-active {
+            font-weight: 600;
+            color: #090B7C; /* Seer primary color for active link */
+        }
+
+        /* Custom Tailwind colors for Seer */
+        .bg-Seer-primary { background-color: #00A9FF; }
+        .hover\:bg-Seer-dark:hover { background-color: #06075A; } /* Darker shade for hover */
+        .text-Seer-primary { color: #00A9FF; }
+        .hover\:text-Seer-dark:hover { color: #06075A; }
+        .hover\:bg-Seer-light:hover { background-color: #E0E1F0; } /* Very light shade for hover backgrounds */
+        .focus\:ring-Seer-focus:focus { --tw-ring-color: #1A1E99; } /* Slightly lighter/vibrant for focus ring */
+        .focus\:border-Seer-focus:focus { border-color: #1A1E99; } /* Slightly lighter/vibrant for focus border */
+
+        /* Hero section specific styling for solid color background */
+        .hero-section {
+            min-height: 70vh; /* Adjust height as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animations for sections */
+        @keyframes fade-in-down {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down {
+            animation: fade-in-down 0.8s ease-out forwards;
+        }
+
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+            animation-delay: 0.2s; /* Delay for sequential animation */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header and Navigation -->
+    <header class="bg-white shadow-md py-4 px-6 md:px-10 sticky top-0 z-50 rounded-b-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo/Site Title -->
+            <a href="#home" class="rounded-md p-1 hover:bg-Seer-light transition duration-300">
+                <img src="img/seer logo.jpg" alt="seer Company Logo" class="h-[90px]">
+            </a>
+
+            <!-- Hamburger Menu Icon (visible on small screens) -->
+            <button id="hamburger-button" class="md:hidden text-gray-700 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition duration-300">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Navigation Links (hidden on small, visible on medium and up) -->
+            <nav id="nav-menu" class="nav-links md:flex md:items-center md:space-x-6 absolute md:relative top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow-lg md:shadow-none rounded-b-lg md:rounded-none md:max-h-none">
+                <ul class="flex flex-col md:flex-row md:space-x-6 p-4 md:p-0">
+                    <li><a href="#home" class="block py-2 px-4 text-gray-700 hover:text-Seer-primary rounded-md hover:bg-gray-100 transition duration-300 nav-item" data-page="home">Home</a></li>
+                    <li><a href="#products" class="block py-2 px-4 text-gray-700 hover:text-Seer-primary rounded-md hover:bg-gray-100 transition duration-300 nav-item" data-page="products">Products</a></li>
+                    <li><a href="#faq" class="block py-2 px-4 text-gray-700 hover:text-Seer-primary rounded-md hover:bg-gray-100 transition duration-300 nav-item" data-page="faq">FAQ</a></li>
+                    <li><a href="#contact" class="block py-2 px-4 text-gray-700 hover:text-Seer-primary rounded-md hover:bg-gray-100 transition duration-300 nav-item" data-page="contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="w-full px-6 md:px-10 py-10">
+
+        <!-- Home Section -->
+        <section id="home" class="hero-section bg-Seer-primary min-h-screen flex items-center justify-center text-white rounded-xl shadow-lg mb-16 p-8 md:p-16 max-w-7xl mx-auto">
+            <div class="relative z-10 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-down">
+                    Your Vision, Printed to Perfection by <span class="text-yellow-300">Seer</span>
+                </h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-90 animate-fade-in-up">
+                    High-quality custom printing for all your needs: apparel, accessories, home decor, and more.
+                </p>
+                <a href="#products" class="inline-block bg-white text-Seer-primary font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transform hover:scale-105 transition duration-300 ease-in-out">
+                    Explore Our Products
+                </a>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="py-16 bg-white rounded-xl shadow-lg mb-16 p-8 md:p-12 max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-Seer-primary mb-12">Our Printing Services</h2>
+            <div class="space-y-8">
+                <!-- Product Item 1 -->
+                <div class="flex flex-col md:flex-row items-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                    <img src="img/il_1080xN.5681979017_57to.avif" alt="Product A" class="w-full md:w-1/3 h-48 object-cover rounded-md mb-4 md:mb-0 md:mr-6 shadow-sm">
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Innovative Gadget</h3>
+                        <p class="text-gray-600 mb-2">A cutting-edge device designed to simplify your daily tasks with advanced features.</p>
+                        <span class="text-Seer-primary text-xl font-bold">$199.99</span>
+                    </div>
+                </div>
+                <!-- Product Item 2 -->
+                <div class="flex flex-col md:flex-row items-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                    <img src="img/custom tees.jpg" alt="Product B" class="w-full md:w-1/3 h-48 object-cover rounded-md mb-4 md:mb-0 md:mr-6 shadow-sm">
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Smart Home Hub</h3>
+                        <p class="text-gray-600 mb-2">Centralize control of all your smart devices for a seamless and connected home experience.</p>
+                        <span class="text-Seer-primary text-xl font-bold">$249.00</span>
+                    </div>
+                </div>
+                <!-- Product Item 3 -->
+                <div class="flex flex-col md:flex-row items-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                    <img src="img/pc stickers.jpg" alt="Product C" class="w-full md:w-1/3 h-48 object-cover rounded-md mb-4 md:mb-0 md:mr-6 shadow-sm">
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Portable Power Bank</h3>
+                        <p class="text-gray-600 mb-2">Never run out of battery again with our high-capacity, fast-charging power bank.</p>
+                        <span class="text-Seer-primary text-xl font-bold">$59.99</span>
+                    </div>
+                </div>
+                <!-- Product Item 4 -->
+                <div class="flex flex-col md:flex-row items-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                    <img src="img/led design.jpg" alt="Product D" class="w-full md:w-1/3 h-48 object-cover rounded-md mb-4 md:mb-0 md:mr-6 shadow-sm">
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Ergonomic Keyboard</h3>
+                        <p class="text-gray-600 mb-2">Designed for comfort and efficiency, reducing strain during long hours of work.</p>
+                        <span class="text-Seer-primary text-xl font-bold">$89.00</span>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 bg-white rounded-xl shadow-lg mb-16 p-8 md:p-12 max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-Seer-primary mb-12">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-6 bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">How will my Seer printing order be shipped?</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        We partner with reliable shipping carriers to ensure your custom printing order arrives safely and efficiently.
+                        Standard shipping typically takes 5-7 business days. Express options are available at checkout
+                        for faster delivery, usually within 2-3 business days.
+                    </p>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="mb-6 bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">What are the shipping costs for Seer printing?</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Shipping costs vary depending on your location and the selected shipping method.
+                       
+                        We occasionally offer free shipping promotions, so keep an eye out for those!
+                    </p>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="mb-6 bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Can I track my Seer printing order?</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Absolutely! Once your SEER order is dispatched, you will receive an email containing
+                        your tracking number. You can use this to
+                        monitor the progress of your delivery in real-time by calling for our support team.
+                    </p>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="mb-6 bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">What if my Seer package is delayed or lost?</h3>
+                    <p class="text-700 leading-relaxed">
+                        While rare, delays can occur. If your package is significantly delayed or appears lost,
+                        please contact our customer support team immediately with your order number.
+                        We will work with the shipping carrier to resolve the issue and ensure you receive your order.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-white rounded-xl shadow-lg p-8 md:p-12 max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-Seer-primary mb-12">Get in Touch with Seer</h2>
+            <div class="max-w-xl mx-auto">
+                <p class="text-center text-gray-700 mb-8">
+                    Have questions or need assistance with your custom printing order? Reach out to us through the form below, or use our direct contact information.
+                </p>
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-Seer-focus focus:border-Seer-focus sm:text-sm" placeholder="John Doe" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-Seer-focus focus:border-Seer-focus sm:text-sm" placeholder="you@example.com" required>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                        <input type="text" id="subject" name="subject" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-Seer-focus focus:border-Seer-focus sm:text-sm" placeholder="Inquiry about custom printing" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                        <textarea id="message" name="message" rows="5" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-Seer-focus focus:border-Seer-focus sm:text-sm" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" id="send-message-button" class="inline-block bg-Seer-primary text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-Seer-dark transform hover:scale-105 transition duration-300 ease-in-out">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-12 text-center text-gray-700">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Other Ways to Reach Seer</h3>
+                    <p class="mb-2"><i class="fas fa-phone-alt text-Seer-primary mr-2"></i> Phone: <a href="tel:+251921058541" class="text-Seer-primary hover:underline">0921058541</a>  / <a href="tel:+251972055822" class="text-Seer-primary hover:underline">0972055822</a></p>
+                    <p class="mb-2"><i class="fas fa-envelope text-Seer-primary mr-2"></i> Email: <a href="mailto:info@Seer.com" class="text-Seer-primary hover:underline">info@Seer.com</a></p>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt text-Seer-primary mr-2"></i> Address: bale , Oromia , Ethiopia</p>
+                    <div class="flex justify-center space-x-6 mt-6">
+                        <a href="#" class="text-Seer-primary hover:text-Seer-dark transition duration-300"><i class="fab fa-facebook-f text-2xl"></i></a>
+                        <a href="#" class="text-Seer-primary hover:text-Seer-dark transition duration-300"><i class="fab fa-telegram-plane text-2xl"></i></a>
+                        <a href="#" class="text-Seer-primary hover:text-Seer-dark transition duration-300"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-Seer-primary hover:text-Seer-dark transition duration-300"><i class="fab fa-linkedin-in text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-6 md:px-10 rounded-t-lg">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>&copy; 2025 Seer. All rights reserved.</p>
+            <p class="mt-2 text-gray-400">Seer</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Hamburger Menu functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const navMenu = document.getElementById('nav-menu');
+            const navItems = document.querySelectorAll('.nav-item');
+
+            // Function to toggle the navigation menu visibility
+            function toggleNavMenu() {
+                navMenu.classList.toggle('open');
+            }
+
+            // Event listener for hamburger button click
+            hamburgerButton.addEventListener('click', toggleNavMenu);
+
+            // Function to update active navigation link
+            function updateActiveNavLink() {
+                const sections = document.querySelectorAll('section');
+                let currentActive = null;
+
+                // Determine which section is currently in view
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    // Check if the section is mostly in view (30% from top/bottom of viewport)
+                    if (rect.top <= window.innerHeight * 0.3 && rect.bottom >= window.innerHeight * 0.3) {
+                        currentActive = section.id;
+                    }
+                });
+
+                // Apply active class to the corresponding navigation item
+                navItems.forEach(item => {
+                    item.classList.remove('nav-link-active');
+                    if (item.dataset.page === currentActive) {
+                        item.classList.add('nav-link-active');
+                    }
+                });
+            }
+
+            // Add scroll event listener to update active link
+            window.addEventListener('scroll', updateActiveNavLink);
+
+            // Initial call to set active link on load
+            updateActiveNavLink();
+
+            // Close menu when a navigation item is clicked (for mobile)
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    if (navMenu.classList.contains('open')) {
+                        navMenu.classList.remove('open');
+                    }
+                });
+            });
+
+            // Close menu if clicked outside on mobile
+            document.addEventListener('click', (event) => {
+                const isClickInsideNav = navMenu.contains(event.target) || hamburgerButton.contains(event.target);
+                // Only close if on mobile screen size and menu is open
+                if (!isClickInsideNav && navMenu.classList.contains('open') && window.innerWidth < 768) { // 768px is Tailwind's 'md' breakpoint
+                    navMenu.classList.remove('open');
+                }
+            });
+
+            // Ensure navigation is visible on larger screens and hidden on smaller if resized
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768) {
+                    navMenu.classList.remove('open'); // Ensure menu is closed when resizing to desktop
+                    navMenu.classList.add('md:flex'); // Ensure flex display on desktop
+                } else {
+                    navMenu.classList.remove('md:flex'); // Remove flex display on mobile
+                }
+                updateActiveNavLink(); // Update active link on resize too
+            });
+
+            // --- Contact Form Mailto Functionality ---
+            const contactForm = document.getElementById('contact-form');
+            const sendMessageButton = document.getElementById('send-message-button');
+
+            sendMessageButton.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the default form submission
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+
+                // Basic validation
+                if (!name || !email || !subject || !message) {
+                    alert('Please fill in all fields before sending your message.');
+                    return;
+                }
+
+                const recipientEmail = 'info@Seer.com'; // Replace with your actual Seer contact email
+                const mailtoSubject = encodeURIComponent(`Seer Printing Inquiry: ${subject}`);
+                const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+                const mailtoLink = `mailto:${recipientEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+                // Create a temporary anchor element
+                const tempLink = document.createElement('a');
+                tempLink.href = mailtoLink;
+                tempLink.target = '_blank'; // Try to open in a new tab/window
+                tempLink.style.display = 'none'; // Hide the link
+
+                // Append to body, click, and remove
+                document.body.appendChild(tempLink);
+                tempLink.click();
+                document.body.removeChild(tempLink);
+            });
+        });
+    </script>
+</body>
+</html>
